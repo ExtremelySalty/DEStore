@@ -21,11 +21,11 @@ jobs:
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
       - name: Install dependencies
-        working-directory: ./src
+        working-directory: ./src/DEStore
         run: dotnet restore
       - name: Build
-        working-directory: ./src
+        working-directory: ./src/DEStore
         run: dotnet build --configuration Release --no-restore
       - name: Test
-        working-directory: ./src
+        working-directory: ./src/DEStore
         run: dotnet test --no-restore --verbosity normal
